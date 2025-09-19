@@ -10,12 +10,12 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Core Brand Colors */
-    --navy-dark: 239 95% 19%;        /* #03045E - Hero backgrounds, headings */
-    --blue-deep: 198 100% 36%;       /* #0077B6 - Primary buttons, section headers */
-    --cyan-bright: 191 100% 42%;     /* #00B4D8 - Highlights, hover states, CTA */
-    --blue-soft: 196 77% 75%;        /* #90E0EF - Cards, section backgrounds */
-    --aqua-light: 193 79% 89%;       /* #CAF0F8 - Page background blocks */
-    --text-primary: 0 0% 20%;        /* #333333 - Main text */
+    --navy-dark: 220 43% 5%;         /* #040910 - Hero backgrounds, headings */
+    --blue-deep: 251 81% 58%;        /* #523CE6 - Primary buttons, section headers */
+    --cyan-bright: 251 81% 58%;      /* #523CE6 - Highlights, hover states, CTA */
+    --blue-soft: 240 17% 98%;        /* #F8F8FA - Cards, section backgrounds */
+    --aqua-light: 240 17% 98%;       /* #F8F8FA - Page background blocks */
+    --text-primary: 220 43% 5%;      /* #040910 - Main text */
     
     /* Design System Tokens */
     --background: 0 0% 100%;

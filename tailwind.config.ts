@@ -21,6 +21,9 @@ export default {
         navy: {
           dark: "hsl(var(--navy-dark))",
         },
+        purple: {
+          primary: "hsl(var(--blue-deep))",
+        },
         blue: {
           deep: "hsl(var(--blue-deep))",
           soft: "hsl(var(--blue-soft))",

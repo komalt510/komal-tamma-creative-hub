@@ -1,4 +1,4 @@
-import { Palette, Code, Wrench, Sparkles } from 'lucide-react';
+import { Palette, Code, Wrench, Sparkles, Monitor, Smartphone, Layers, Github, Paintbrush, Image, Figma, Wand2 } from 'lucide-react';
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -8,10 +8,10 @@ const SkillsSection = () => {
       color: "text-cyan-bright",
       bgColor: "bg-cyan-bright/10",
       skills: [
-        "Website Design",
-        "Mobile App Design", 
-        "Prototyping",
-        "Social Media Creatives"
+        { name: "Website Design", icon: Monitor },
+        { name: "Mobile App Design", icon: Smartphone }, 
+        { name: "Prototyping", icon: Layers },
+        { name: "Social Media Creatives", icon: Image }
       ]
     },
     {
@@ -20,11 +20,11 @@ const SkillsSection = () => {
       color: "text-blue-deep",
       bgColor: "bg-blue-deep/10",
       skills: [
-        "HTML",
-        "CSS",
-        "Bootstrap",
-        "Tailwind",
-        "GitHub"
+        { name: "HTML", icon: Code },
+        { name: "CSS", icon: Paintbrush },
+        { name: "Bootstrap", icon: Layers },
+        { name: "Tailwind", icon: Palette },
+        { name: "GitHub", icon: Github }
       ]
     },
     {
@@ -33,10 +33,10 @@ const SkillsSection = () => {
       color: "text-navy-dark",
       bgColor: "bg-navy-dark/10",
       skills: [
-        "Figma",
-        "Canva",
-        "Photoshop",
-        "Illustrator"
+        { name: "Figma", icon: Figma },
+        { name: "Canva", icon: Palette },
+        { name: "Photoshop", icon: Image },
+        { name: "Illustrator", icon: Paintbrush }
       ]
     },
     {
@@ -45,10 +45,10 @@ const SkillsSection = () => {
       color: "text-cyan-bright",
       bgColor: "bg-cyan-bright/10",
       skills: [
-        "MidJourney",
-        "Lovable",
-        "Cursor",
-        "Gamma"
+        { name: "MidJourney", icon: Wand2 },
+        { name: "Lovable", icon: Code },
+        { name: "Cursor", icon: Monitor },
+        { name: "Gamma", icon: Layers }
       ]
     }
   ];
@@ -88,10 +88,11 @@ const SkillsSection = () => {
                 <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => (
                     <div 
-                      key={skill}
-                      className="bg-muted/50 rounded-lg p-3 text-center transform transition-all duration-200 hover:bg-secondary/30"
+                      key={skill.name}
+                      className="bg-muted/50 rounded-lg p-3 flex items-center gap-3 transform transition-all duration-200 hover:bg-secondary/30"
                     >
-                      <span className="text-text-primary font-medium">{skill}</span>
+                      <skill.icon className="w-4 h-4 text-primary" />
+                      <span className="text-text-primary font-medium">{skill.name}</span>
                     </div>
                   ))}
                 </div>
