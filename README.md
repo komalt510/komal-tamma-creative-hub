@@ -1,3 +1,5 @@
+Hola
+
 # Welcome to your Lovable project
 
 ## Project info
@@ -8,7 +10,7 @@
 
 There are several ways of editing your application.
 
-**Use Lovable**
+**Use Lovable** 
 
 Simply visit the [Lovable Project](https://lovable.dev/projects/3857347a-11fc-45b0-a948-49d1a2dcd5d3) and start prompting.
 
