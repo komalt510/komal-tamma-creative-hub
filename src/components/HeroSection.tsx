@@ -1,5 +1,5 @@
 import { Button } from './ui/button';
-import { ExternalLink, ArrowDown } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
 
 const HeroSection = () => {
@@ -11,93 +11,95 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen bg-navy-dark relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-soft"></div>
-        <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-bright rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-96 h-96 bg-blue-soft rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
+    <section id="hero" className="pt-16 pb-20 bg-white relative overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute top-20 right-20 w-32 h-32 opacity-10">
+        <div className="w-full h-full grid grid-cols-6 gap-1">
+          {[...Array(36)].map((_, i) => (
+            <div key={i} className="w-2 h-2 bg-cyan-bright rounded-full opacity-60"></div>
+          ))}
+        </div>
+      </div>
+      
+      <div className="absolute top-32 left-20 text-6xl opacity-20">
+        ⭐
       </div>
 
-      <div className="relative container-custom flex items-center min-h-screen">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full pt-16">
-          {/* Content */}
-          <div className="text-white space-y-8 animate-fade-in">
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                Komal
-                <span className="block gradient-text bg-gradient-primary bg-clip-text text-transparent">
-                  Tamma
-                </span>
-              </h1>
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-blue-soft">
-                UI/UX Designer | Crafting Websites, Mobile Apps & Digital Experiences
-              </h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+          {/* Left Side - Image with Floating Tags */}
+          <div className="relative order-2 lg:order-1">
+            <div className="relative rounded-3xl overflow-hidden bg-navy-dark">
+              <img 
+                src={heroImage} 
+                alt="UI/UX Designer Komal Tamma workspace with modern design tools and interfaces"
+                className="w-full h-[500px] object-cover"
+              />
             </div>
-
-            <p className="text-lg md:text-xl text-blue-soft/90 max-w-2xl leading-relaxed">
-              I design intuitive, engaging, and impactful digital experiences that blend creativity with usability.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button 
-                variant="hero" 
-                size="lg"
-                onClick={() => scrollToSection('projects')}
-                className="text-base px-8 py-6"
-              >
-                View My Work
-                <ArrowDown className="w-5 h-5" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="text-base px-8 py-6 border-white text-white hover:bg-white hover:text-navy-dark"
-                onClick={() => window.open('https://www.linkedin.com/in/komal-tamma-557722273', '_blank')}
-              >
-                Connect on LinkedIn
-                <ExternalLink className="w-5 h-5" />
-              </Button>
+            
+            {/* Floating Service Tags */}
+            <div className="absolute top-8 -left-4 bg-red-500 text-white px-4 py-2 rounded-full shadow-lg">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <span className="text-sm font-medium">Website Design</span>
+              </div>
+            </div>
+            
+            <div className="absolute top-20 -left-8 bg-orange-500 text-white px-4 py-2 rounded-full shadow-lg">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <span className="text-sm font-medium">Mobile App Design</span>
+              </div>
+            </div>
+            
+            <div className="absolute top-32 -left-4 bg-cyan-bright text-white px-4 py-2 rounded-full shadow-lg">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <span className="text-sm font-medium">UI/UX Design</span>
+              </div>
             </div>
           </div>
 
-          {/* Hero Image */}
-          <div className="relative animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <div className="relative rounded-2xl overflow-hidden shadow-hover">
-              <img 
-                src={heroImage} 
-                alt="UI/UX Designer workspace with modern design tools and interfaces"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-primary/20"></div>
+          {/* Right Side - Content */}
+          <div className="order-1 lg:order-2 space-y-8">
+            <div className="space-y-6">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy-dark leading-tight">
+                UI/UX Designer
+                <span className="block text-navy-dark">
+                  Komal Tamma
+                </span>
+              </h1>
+              <p className="text-xl text-text-primary leading-relaxed">
+                I design intuitive, engaging, and impactful digital experiences that blend creativity with usability.
+              </p>
             </div>
-            
-            {/* Floating Cards */}
-            <div className="absolute -top-6 -right-6 bg-white rounded-xl p-4 shadow-hover animate-pulse">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-cyan-bright rounded-full"></div>
-                <span className="text-navy-dark font-medium">2.5+ Years</span>
+
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <CheckCircle className="w-5 h-5 text-cyan-bright" />
+                <span className="text-text-primary">2.5+ years professional experience</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <CheckCircle className="w-5 h-5 text-cyan-bright" />
+                <span className="text-text-primary">Expert in modern design tools</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <CheckCircle className="w-5 h-5 text-cyan-bright" />
+                <span className="text-text-primary">AI-powered design innovation</span>
               </div>
             </div>
-            
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-hover animate-pulse" style={{ animationDelay: '1s' }}>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-blue-deep rounded-full"></div>
-                <span className="text-navy-dark font-medium">UI/UX Expert</span>
-              </div>
+
+            <div className="pt-4">
+              <Button 
+                size="lg"
+                onClick={() => scrollToSection('contact')}
+                className="bg-cyan-bright hover:bg-cyan-bright/90 text-white px-8 py-4 text-lg font-medium"
+              >
+                Get a Consultation
+              </Button>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <button 
-          onClick={() => scrollToSection('about')}
-          className="text-white/60 hover:text-white transition-colors"
-        >
-          <ArrowDown className="w-6 h-6" />
-        </button>
       </div>
     </section>
   );
